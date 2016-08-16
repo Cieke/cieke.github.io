@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Objects Demo</title>
+    </head>
+    <body>
+        <script>
+
+            //in file worker.js :
+            function Worker(name, capacity) {
+               // this.name = name;
+               // this.capacity = capacity;
+                return {
+                    getName: function () {
+                        return name;
+                    }
+                }
+            }
+            Worker.prototype.fly = function () {
+                document.writeln("Worker is flying " + this.name);
+
+                }
+
+
+
+
+            //Usage:
+            var w = new Worker('Maya', 100);
+
+
+
+
+            var a = ['jimi','janis'];
+            for(var i=0; i< a.length; i++){
+                var name = a[i];
+            }
+
+            a.push('Kurt'); // iets instoppen
+            a.unshift('Jimbo'); // wordt vooraan in de lijst toegevoegd
+
+
+            function Object() {
+
+            }
+            Object.prototype.hello = function () {
+                // prototype property
+            };
+            //done by calling new
+
+            var q = {};
+            q.__proto__ = Object.prototype;
+            Object.apply(q,[])
+            // end of done by calling new
+
+
+
+            var q = new Object();
+
+            var p = {
+                age: 27,
+                sex: 'male',
+                firstName:'Jimi',
+                lastName:'Hendrix',
+
+                getFullName: function() {
+                    return this.firstName + " " + this.lastName;
+                },
+                setFullName: function(firstName, lastName){
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+            };
+            p.instrument = 'Guitar';
+
+            document.writeln(p.getFullName());
+            //document.writeln("<div>")
+            p.setFullName("Janis",'Joplin');
+            document.writeln(p.getFullName.apply(p));
+
+
+        </script>
+    </body>
+
+</html>

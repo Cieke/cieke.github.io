@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move</title>
+    <style>
+        #container{
+            border: 0.1rem solid black;
+            width: 100%;
+            height: 30rem;
+        }
+
+        #ball {
+            width: 2rem;
+            height: 2rem;
+            border: 0.1rem solid red;
+            background: yellow;
+            border-radius: 50%;
+            position: fixed;
+            top: 200px;
+            left: 300px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+        <h1>Move</h1>
+
+        <div id="ball"></div>
+
+        <div id="container">
+
+        </div>
+
+        <script>
+            var div = document.getElementById('container');
+            div.addEventListener('mousemove', function(e){
+                console.log('yes yes yes');
+                console.log(e);
+                // clientX en clientY
+                var x = e.clientX;
+                var y = e.clientY;
+               // document.writeln(x);
+                var ball = document.getElementById('ball');
+                ball.style.left = x + 'px';
+                ball.style.top = y + 'px';
+
+            })
+        </script>
+</body>
+</html>
