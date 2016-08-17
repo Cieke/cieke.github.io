@@ -5,6 +5,23 @@
     <title></title>
 </head>
 <body>
-test
+<script>
+    var geo = navigator.geolocation;
+
+    var options = {
+        enableHighAccuracy: true  // als je met mobiel werkt dan ga je veel batterij gebruiken, dan zet je het beter op false
+    };
+    geo.watchPosition(success, error, options);
+
+    function success(position){
+        console.log('succes '  + position.coords.latitude +"    " +position.coords.longitude+
+                "  altitude:   " + position.coords.altitude + " accuracy " + position.coords.accuracy +
+                "  altitude accuracy: "   + position.coords.altitudeAccuracy + " Heading:   " + position.coords.heading);
+
+    }
+    function error(positionError) {
+        console.log('error');
+    }
+</script>
 </body>
 </html>

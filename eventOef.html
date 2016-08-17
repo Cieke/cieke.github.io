@@ -28,6 +28,11 @@
 
         <h1>Move</h1>
 
+        <svg width="320" height="240">
+            <circle cx="10" cy="10" r="10" id="ball2" fill="red"/>
+
+        </svg>
+
         <div id="ball"></div>
 
         <div id="container">
@@ -36,6 +41,9 @@
 
         <script>
             var div = document.getElementById('container');
+
+
+
             div.addEventListener('mousemove', function(e){
                 console.log('yes yes yes');
                 console.log(e);
@@ -44,9 +52,12 @@
                 var y = e.clientY;
                // document.writeln(x);
                 var ball = document.getElementById('ball');
-                ball.style.left = x + 'px';
-                ball.style.top = y + 'px';
+                ball.style.left = x + 'px'; // schrijven zoals het geschreven is in CSS,
+                ball.style.top = y + 'px';  // je gaat CSS code nabootsen, vandaar style, dit refereert naar CSS
 
+
+                var b2 =document.getElementById("ball2");
+               b2.setAttribute("r",  Math.sin(point.x/1000)*100);
             })
         </script>
 </body>
